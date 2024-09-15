@@ -11,7 +11,6 @@ const port = process.env.PORT || 4000;
 let salas = new Map();
 io.on('connection', (socket) => {
     socket.on('enviar-nombre', (data) => {
-        console.log('name: ' + socket.id);
         socket.join(data.codigo);
         socket.sala = data.codigo;
         if (salas.has(data.codigo)) {
