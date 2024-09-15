@@ -83,7 +83,6 @@ io.on('connection', (socket) => {
             io.to(socket.sala).emit('resultados', resultados);
         }
     })
-
     socket.on('reiniciar', () => {
         if (socket.sala) {
             const sala = salas.get(socket.sala);
